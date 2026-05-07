@@ -1,0 +1,5 @@
+hellocucumber/model/Hotel.class
+hellocucumber/model/User.class
+hellocucumber/controller/UserController.class
+hellocucumber/controller/HotelController.class
+hellocucumber/HotelBayApplication.class
