@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  hotelbay-db:
+    image: postgres:15
+    container_name: hotelbay-postgres
+    environment:
+      POSTGRES_DB: hotelbay
+      POSTGRES_USER: hotelbay
+      POSTGRES_PASSWORD: hotelbay123
+    ports:
+      - "5432:5432"

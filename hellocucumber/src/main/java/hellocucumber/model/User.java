@@ -1,13 +1,27 @@
 package hellocucumber.model;
 
-public class User {
-    private Long id;
-    private String username;
-    private String email;
-    private String role; // "ADMIN" ou "GUEST"
+import jakarta.persistence.*;
 
-    public User(Long id, String username, String email, String role) {
-        this.id = id;
+@Entity
+@Table(name = "users")
+public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true, nullable = false)
+    private String username;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
+    private String role;
+
+    public User() {}
+
+    public User(String username, String email, String role) {
         this.username = username;
         this.email = email;
         this.role = role;

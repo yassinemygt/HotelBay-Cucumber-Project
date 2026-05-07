@@ -1,5 +1,7 @@
+hellocucumber/repository/UserRepository.class
 hellocucumber/model/Hotel.class
-hellocucumber/model/User.class
-hellocucumber/controller/UserController.class
 hellocucumber/controller/HotelController.class
 hellocucumber/HotelBayApplication.class
+hellocucumber/repository/HotelRepository.class
+hellocucumber/model/User.class
+hellocucumber/controller/UserController.class

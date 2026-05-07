@@ -1,13 +1,27 @@
 package hellocucumber.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "hotels")
 public class Hotel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private String location;
+
+    @Column(nullable = false)
     private boolean active;
 
-    public Hotel(Long id, String name, String location) {
-        this.id = id;
+    public Hotel() {}
+
+    public Hotel(String name, String location) {
         this.name = name;
         this.location = location;
         this.active = true;
