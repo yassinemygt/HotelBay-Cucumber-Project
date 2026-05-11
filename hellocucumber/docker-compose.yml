@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   hotelbay-db:
     image: postgres:15
@@ -10,3 +8,24 @@ services:
       POSTGRES_PASSWORD: hotelbay123
     ports:
       - "5432:5432"
+    networks:
+      - hotelbay-network
+
+  hotelbay-app:
+    build: .
+    container_name: hotelbay-app
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://hotelbay-db:5432/hotelbay
+      SPRING_DATASOURCE_USERNAME: hotelbay
+      SPRING_DATASOURCE_PASSWORD: hotelbay123
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - hotelbay-db
+    networks:
+      - hotelbay-network
+
+networks:
+  hotelbay-network:
+    driver: bridge
