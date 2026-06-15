@@ -49,4 +49,3 @@
               cd ~/app
               docker pull ya34ine/hotelbay-app:latest
               docker compose up -d
-    EOF
